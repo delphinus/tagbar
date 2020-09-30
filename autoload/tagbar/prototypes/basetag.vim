@@ -1,11 +1,8 @@
-let s:visibility_symbols = {
+let s:visibility_symbols = get(g:, 'tagbar_visibility_symbols', {
     \ 'public'    : '+',
     \ 'protected' : '#',
     \ 'private'   : '-'
-\ }
-if !empty(g:tagbar_visibility_symbols)
-    let s:visibility_symbols = g:tagbar_visibility_symbols
-endif
+\ })
 
 function! tagbar#prototypes#basetag#new(name) abort
     let newobj = {}
